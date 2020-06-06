@@ -580,7 +580,7 @@ button:focus {
 }
 
 .featured .pricing-rate:before {
-    content: "Popular";
+    content: "Populer";
     display: block;
     width: 95px;
     font-size: 12px;

@@ -6,9 +6,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="icon" type="image/png" href="{{asset('')}}assets/images/fav-icon.png?v=248">
+  <link rel="icon" type="image/png" href="{{asset("")}}assets/images/ubahsaldo-favico.png?v=<?= rand(1, 1000) ?>">
   <title>@yield('title') Page!</title>
 
+  <link rel="stylesheet" href="{{asset('')}}lib/codemirror/neo.css">
 
   <link href="{{asset('')}}lib/font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="{{asset('')}}lib/Ionicons/css/ionicons.css" rel="stylesheet">
@@ -22,6 +23,13 @@
   <link href="{{asset('')}}lib/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
   <link href="{{asset('')}}lib/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
   <link href="{{asset('')}}lib/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+  <link href="{{asset('')}}css/samples.css" rel="stylesheet">
+  <link href="{{asset('')}}ckeditor/samples.css" rel="stylesheet">
+  <script src="{{asset('')}}ckeditor/ckeditor.js"></script>
+  <script src="{{asset('')}}ckeditor/sample.js"></script>
+  <link rel="{{asset('')}}ckeditor/stylesheet" href="samples.css">
+  <link rel="{{asset('')}}ckeditor/stylesheet" href="neo.css">
+
 
 
   <link rel="stylesheet" href="{{asset('')}}css/bracket.css">
@@ -44,9 +52,19 @@
         </div>
       </a>
       <ul class="br-menu-sub nav flex-column">
-        <li class="nav-item"><a href="{{route('home.company')}}" class="nav-link {{ Request::is('home/company') ? 'active' : '' }}">Company profile</a></li>
-        <li class="nav-item"><a href="{{route('home.providers')}}" class="nav-link {{ Request::is('home/providers*') ? 'active' : '' }}">Providers</a></li>
-        <li class="nav-item"><a href="{{route('home.rates')}}" class="nav-link {{ Request::is('home/rates*') ? 'active' : '' }}">Rate Providers</a></li>
+          @if (Auth::user()->level == '1')
+          <li class="nav-item"><a href="{{route('home.company')}}" class="nav-link {{ Request::is('home/company') ? 'active' : '' }}">Profil Perusahaan</a></li>
+          <li class="nav-item"><a href="{{route('home.providers')}}" class="nav-link {{ Request::is('home/providers*') ? 'active' : '' }}">Provider</a></li>
+          <li class="nav-item"><a href="{{route('home.rates')}}" class="nav-link {{ Request::is('home/rates*') ? 'active' : '' }}">Rate Providers</a></li>
+          <li class="nav-item"><a href="{{route('home.tos')}}" class="nav-link {{ Request::is('home/tos*') ? 'active' : '' }}">Syarat Dan Ketentuan</a></li>
+          <li class="nav-item"><a href="{{route('home.admin')}}" class="nav-link {{ Request::is('home/admin*') ? 'active' : '' }}">Admin</a></li>
+          <li class="nav-item"><a href="{{route('home.password')}}" class="nav-link {{ Request::is('home/password*') ? 'active' : '' }}">Password</a></li>
+          <li class="nav-item"><a href="{{route('home.testimonial')}}" class="nav-link {{ Request::is('home/testimonial*') ? 'active' : '' }}">Testimonial</a></li>
+        @endif
+          @if (Auth::user()->level == '2')
+          <li class="nav-item"><a href="{{route('home.rates')}}" class="nav-link {{ Request::is('home/rates*') ? 'active' : '' }}">Rate Provider</a></li>
+          <li class="nav-item"><a href="{{route('home.password')}}" class="nav-link {{ Request::is('home/password*') ? 'active' : '' }}">Password</a></li>
+          @endif
     </ul>
 
 
@@ -67,6 +85,20 @@
       </div>
     </div>
     <div class="br-header-right">
+        <nav class="nav">
+            <div class="dropdown">
+                <a href="#" class="nav-link nav-link-profile" data-toggle="dropdown">
+                <span class="logged-name hidden-md-down">{{Auth::user()->name}}</span>
+                  <img src="{{asset('')}}img/users.jpg" class="wd-32 rounded-circle" alt="">
+                  <span class="square-10 bg-success"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-header wd-200">
+                  <ul class="list-unstyled user-profile-nav">
+                  <li><a href="{{route('logout')}}"><i class="icon ion-power"></i>Log Out</a></li>
+                  </ul>
+                </div><!-- dropdown-menu -->
+              </div>
+        </nav>
     </div>
   </div>
         @yield('main')
@@ -89,7 +121,9 @@
   <script src="{{asset('')}}lib/jquery.maskedinput/jquery.maskedinput.js"></script>
   <script src="{{asset('')}}lib/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
   <script src="{{asset('')}}lib/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
-@if ($message = Session::get('success'))
+
+
+  @if ($message = Session::get('success'))
 <script>
     Swal.fire(
       'Sukses!',

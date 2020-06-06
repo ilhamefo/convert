@@ -25,7 +25,7 @@
                 Atas Nama :{{$data['order'][0]->atas_nama}}<hr>
                 Nomor Rekening : {{$data['order'][0]->nomor_rekening}}<hr>
                 {{$data['strip']}} <br>
-                Yang akan dapatkan : {{number_format($data['order'][0]->nominal_pulsa * $data['rate'][0]->rate,2,",",".")}} <br>
+                Yang akan dapatkan : {{number_format($data['result'], 2, ",", ".")}} <br>
                 {{$data['strip']}}<br>
             </p>
             <div class="learn-more-btn-section">

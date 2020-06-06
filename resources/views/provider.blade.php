@@ -68,7 +68,7 @@
                                     <a href="{{route('edit.providers', ['providers' => $i->id])}}"
                                         class="btn btn-primary"><i class="fa fa-cogs"></i></a>
                                     <form action="{{route('destroy.providers',['providers' => $i->id])}}" method="POST"
-                                        class="target" ">
+                                        class="target">
                                   @csrf
                                   @method('DELETE')
                                   <button type=" submit" class="btn btn-danger tmb_hps" data-loop="{{$loop->index+1}}">

@@ -8,17 +8,17 @@
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-	<link rel="icon" type="image/png" href="{{asset("")}}assets/images/fav-icon.png?v=<?= rand(1, 1000) ?>">
+	<link rel="icon" type="image/png" href="{{asset("")}}assets/images/ubahsaldo-favico.png?v=<?= rand(1, 1000) ?>">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="{{asset("")}}assets/css/select2-bootstrap4.css">
 
 	<link rel="stylesheet" href="{{asset("")}}assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="{{asset("")}}assets/css/form.css">
 	<link rel="stylesheet" type="text/css" href="{{asset("")}}assets/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="{{asset("")}}assets/css/accordian.css" />
 	<link rel="stylesheet" href="{{asset("")}}assets/css/owl/owl.carousel.min.css">
 	<link rel="stylesheet" href="{{asset("")}}assets/css/owl/owl.theme.default.min.css">
-	<link rel="stylesheet" href="{{asset("")}}assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset("")}}assets/css/font-awesome.min.css">
+    <link href="{{asset('')}}css/lightbox.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&amp;display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&amp;display=swap" rel="stylesheet">
 
@@ -39,7 +39,7 @@
 
 			<div class="navbar-brand">
 				<a class="navbar-brand-logo" href="#">
-                <img src="{{asset('')}}assets/images/logo-cv.png" width="155px">
+                <img src="{{asset('')}}assets/images/logo-ubahsaldo.png" width="155px">
 				</a>
 			</div>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@
 					<li class="nav-item">
                     <a class="nav-link" href="{{route('home.store')}}">
 							<p class="nav-link-number">01</p>
-							<p class="nav-link-menu">Home</p>
+							<p class="nav-link-menu">Beranda</p>
 						</a>
 					</li>
 					<li class="nav-item">
@@ -80,15 +80,11 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#tos">
 							<p class="nav-link-number">06</p>
-							<p class="nav-link-menu">TOS / Syarat dan Ketentuan</p>
+							<p class="nav-link-menu">Syarat dan Ketentuan</p>
 						</a>
 					</li>
-				</ul>
-				<!-- <ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link learn-more-btn" href="#">Signup</a>
-					</li>
-				</ul> -->
+                </ul>
+
 			</div>
 		</div>
 	</nav>
@@ -100,37 +96,27 @@
 
 		<div class="footer-section">
 			<div class="footer-section-bg-graphics">
-				<img src="{{asset('')}}assets/images/footer-section-bg.png">
+				<img src="">
 			</div>
 
 			<div class="container footer-container">
-				<div class="col-lg-3 col-md-6 footer-logo">
-					<img src="{{asset('')}}assets/images/footer-logo.png">
-					<p class="footer-susection-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<div class="col-lg-4 col-md-6 footer-logo">
+					<img src="{{asset('')}}assets/images/ubahsaldo-putih.png">
+					<p class="footer-susection-text">UbahSaldo.com . website jasa pertukaran pulsa ke uang tunai</p>
 				</div>
-				<div class="col-lg-3 col-md-6 footer-subsection">
+				<div class="col-lg-4 col-md-6 footer-subsection">
 					<div class="footer-subsection-2-1">
 						<h3 class="footer-subsection-title">Tentang Kami</h3>
-						<p class="footer-subsection-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="footer-subsection-text">Kami adalah perusahaan yang berjalan pada jasa pertukaran pulsa ke uang tunai.</p>
 					</div>
 				</div>
 
-				<div class="col-lg-3 col-md-6 footer-subsection">
-					<h3 class="footer-subsection-title">Kontak Kami</h3>
-					<ul class="footer-subsection-list">
-						<li>123 Business Centre<br>London SW1A 1AA</li>
-						<li>0123456789</li>
-					</ul>
-				</div>
-
-				<div class="col-lg-3 col-md-6 footer-subsection">
+				<div class="col-lg-4 col-md-6 footer-subsection">
 					<div class="footer-subsection-2-2">
-						<h3 class="footer-subsection-title">Sosial Media</h3>
+						<h3 class="footer-subsection-title">Kontak Kami</h3>
 						<div class="footer-social-media-icons-section">
-							<a href="#top" class="footer-social-media-icon"><i class="fa fa-twitter"></i></a>
-							<a href="#top" class="footer-social-media-icon"><i class="fa fa-instagram"></i></a>
-							<a href="#top" class="footer-social-media-icon"><i class="fa fa-facebook"></i></a>
-							<a href="#top" class="footer-social-media-icon"><i class="fa fa-linkedin"></i></a>
+							<a href="https://wa.me/6287783036094" class="footer-social-media-icon"><i class="fa fa-whatsapp"></i></a>
+							<a href="fb.com/fajarmcv" class="footer-social-media-icon"><i class="fa fa-facebook"></i></a>
 						</div>
 					</div>
 				</div>
@@ -147,14 +133,15 @@
 
 
 	<script src="{{asset("")}}assets/js/email-decode.min.js"></script>
-	<script src="{{asset("")}}assets/js/jquery.min.js"></script>
-	<script src="{{asset("")}}assets/js/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="{{asset('')}}js/lightbox-plus-jquery.min.js"></script>
+    <script src="{{asset("")}}assets/js/popper.min.js"></script>
 	<script src="{{asset("")}}assets/js/bootstrap.min.js"></script>
 	<script src="{{asset("")}}assets/js/owl.carousel.js"></script>
 	<script src="{{asset("")}}assets/js/accordian.js"></script>
-	<script src="{{asset("")}}assets/js/form.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 
 	<script type="text/javascript">
 		$(window).scroll(function() {
@@ -168,12 +155,12 @@
 	<script>
 		$(document).ready(function() {
 			$(".owl-carousel").owlCarousel({
-				items: 4,
+				items: 3,
 				loop: true,
 				nav: true,
 				autoplay: true,
 				autoplayTimeout: 2000,
-				autoplayHoverPause: true,
+                autoplayHoverPause: true,
 				responsiveClass: true,
 				responsive: {
 					0: {
@@ -191,33 +178,32 @@
     </script>
     <script>
         $(document).ready(function(){
-            Toast.fire({
-            icon: 'success',
-            title: 'Signed in successfully'
-            })
-                function hitung_rate(header){
-                    console.log(header);
-                    $(".hitung" ).click(function() {
-                    var nominal = $("#nominal").val() * parseFloat(header);
-                    // console.log(header);
-                    var	reverse = nominal.toString().split('').reverse().join(''),
-                    ribuan 	= reverse.match(/\d{1,3}/g);
-                    ribuan	= ribuan.join('.').split('').reverse().join('');
+                $(".btn_mdl").click(function() {
 
-                   $(".hasil").html(ribuan);
+                    var id_isp = $(this).attr('data-id_isp');
+                    hitung_rate(id_isp);
                 });
-                }
-
-
-                $('.btn_mdl').click(function(){
-                    var header = $(this).attr('data-header');
-                    hitung_rate(header);
 
                 });
 
+                    function hitung_rate(id_isp){
+                        $(".hitung").click(function(){
+                            var nominal = $("#nominal").val();
+                            $.ajax({
+                            url: '{!! route("get_rate") !!}',
+                            data: {
+                                id_isp:id_isp,
+                                nominal:nominal
+                            },
+                            success: function(data){
+                                console.log(data);
+                                $(".hasil").html(data);
+                            },
+                            dataType:'text'
+                        });
+                        })
+                    }
 
-
-        })
     </script>
 
     <script>
@@ -234,5 +220,4 @@
 
     </script>
 </body>
-sd
 </html>

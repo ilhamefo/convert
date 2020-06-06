@@ -9,9 +9,8 @@
         </div>
         <div class="col-lg-5 offset-lg-1 header-title-section">
         <p class="header-subtitle">{{$data['company'][0]->nama_perusahaan}}</p>
-            <h1 class="header-title">Jasa Convert Pulsa, XXXX, XXXX.</h1>
-            <p class="header-title-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h1 class="header-title">Jasa Convert Pulsa</h1>
+            <p class="header-title-text">{!!$data['company'][0]->deskripsi!!}</p>
             <div class="learn-more-btn-section">
                 <a class="nav-link learn-more-btn btn-invert" href="#" data-toggle="modal" data-target="#order">Order.</a>
             </div>
@@ -20,6 +19,7 @@
 </div>
 
 <br><br>
+
 <div id="services"></div>
 
 <div class="services-section">
@@ -30,27 +30,14 @@
         <div class="col-lg-5 services-title-section">
             <p class="services-subtitle">Siapa Kami?</p>
             <h2 class="services-title">Dan Apa Saja Jasa Kami?</h2>
-            <p class="services-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor.</p>
+            <p class="services-text">Berikut adalah Jasa Kami.</p>
             <div class="services-accordion">
                 <button class="accordion">
                     Convert Pulsa
                 </button>
                 <div class="panel">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                    </p>
-                </div>
-                <button class="accordion">
-                    Convert xxx
-                </button>
-                <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        Menukarkan Pulsa Anda Ke Uang Tunai
                     </p>
                 </div>
             </div>
@@ -69,11 +56,10 @@
         <div class="col-lg-5 offset-lg-1 services-title-section">
             <p class="services-subtitle"></p>
             <h2 class="services-title">Terpercaya.</h2>
-            <p class="services-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="services-text">Sejak 2008 sudah berjalan, dan sudah dipercayai oleh pelanggan kami</p>
 
             <div class="learn-more-btn-section">
-                <a class="nav-link learn-more-btn btn-invert" href="#pricing">Lihat Testimoni</a>
+                <a class="nav-link learn-more-btn btn-invert" href="#testi">Lihat Testimoni</a>
             </div>
 
         </div>
@@ -116,7 +102,7 @@
 
                             </ul>
                         </div>
-                        <a class="nav-link learn-more-btn btn_mdl" href="#"  data-header="{{$i->header}}" data-toggle="modal" data-target="#hitung_rate">Hitung Rate</a>
+                        <a class="nav-link learn-more-btn btn_mdl" href="#"  data-id_isp="{{$i->id}}" data-toggle="modal" data-target="#hitung_rate">Hitung Rate</a>
                     </div>
                 </div>
                 @endforeach
@@ -125,6 +111,26 @@
     </div>
 </div>
 
+<div id="testi"></div>
+
+<div class="clients-section">
+    <div class="container clients-container">
+        <div class="clients-title-section">
+            <p class="clients-subtitle">Transaksi Berhasil Kami</p>
+            <h2 class="clients-title">Testimonial</h2>
+        </div>
+        <div class="clients-slider">
+            <div class="owl-carousel owl-theme clients-slider-section">
+                @foreach ($data['testimonial'] as $item)
+                <div class="item client-logo-section">
+                <a class="example-image-link" href="{{asset('img/testimonial')}}/{{$item->image}}" data-lightbox="example-set" data-title="{!! $item->deskripsi !!}"><img class="example-image" src="{{asset('img/testimonial')}}/{{$item->image}}"></a>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+<br>
 <div id="tos"></div>
 
 <div class="services-section">
@@ -135,39 +141,18 @@
         <div class="col-lg-12 services-title-section">
             <p class="services-subtitle">Syarat & Ketentuan</p>
             <h2 class="services-title">Menggunakan Jasa Kami</h2>
-            <p class="services-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor.</p>
+            <p class="services-text">Berikut adalah TOS kami dan Cara transaksi dengan kami.</p>
             <div class="services-accordion">
+                @foreach ($data['tos'] as $item)
                 <button class="accordion">
-                    Convert Pulsa
+                    {{$item->nama_tos}}
                 </button>
                 <div class="panel">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        {!!$item->deskripsi!!}
                     </p>
                 </div>
-                <button class="accordion">
-                    Convert xxx
-                </button>
-                <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                    </p>
-                </div>
-                <button class="accordion">
-                    Cara
-                </button>
-                <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                    </p>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -180,8 +165,7 @@
         <div class="col-md-6 contact-title-section">
             <!-- <p class="contact-subtitle">Contact</p> -->
             <h2 class="contact-title">Ada Pertanyaan?<br>Kontak Kami</h2>
-            <p class="contact-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor.</p>
+            <p class="contact-text">Silahkan kontak kami melalui link sosial media kami yang berada pada bawah website.</p>
             <!-- <div class="learn-more-btn-section">
                 <a class="nav-link learn-more-btn btn-invert" href="https://demo.codefest.co.uk/cdn-cgi/l/email-protection#c5aba4a8a085a1aaa8a4acabeba6aaa8">Send
                     an Email</a>
@@ -196,108 +180,36 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-            <p class="services-subtitle">Order Convert Pulsa </p>
+            <p class="services-subtitle">Order Convert Pulsa Via</p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
         </div>
         <div class="modal-body">
-        <form id="regForm" action="{{route('order')}}" method="POST">
-            @csrf
-                <div class="tab">
-                    <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" placeholder="John Doe" name="nama" {{old('nama')}}>
-                        @error('nama')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                      <input type="text" class="form-control" name="email" placeholder="Another input" value="{{old('email')}}">
-                        @error('email')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="tab">
-                    <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <select data-placeholder="Pilih Provider" data-allow-clear="1" name="id_isp">
-                            <option label="Pilih..." ></option>
-                                @forelse ($data['providers'] as $i)
-                                        <option value="{{$i->id}}">{{$i->nama_provider}}</option>
-                                @empty
-                                        <option label="">Kosong</option>
-                                @endforelse
-                          </select>
-                          @error('id_isp')
-                          <div class="text-danger">{{ $message }}</div>
-                          @enderror
-                      </div>
-                      <div class="form-group">
-                        <label for="nominal_pulsa">nominal pulsa</label>
-                        <input type="text" class="form-control" name="nominal_pulsa" placeholder="100000" value="{{old('nominal_pulsa')}}">
-                        @error('nominal_pulsa')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                      </div>
-                      <div class="form-group">
-                        <label for="nomor_pengirim">Nomor Pengirim</label>
-                        <input type="text" class="form-control" name="nomor_pengirim" placeholder="081111XXXXX" value="{{old('nomor_pengirim')}}">
-                        @error('nomor_pengirim')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <a href="https://wa.me/6287783036094">
+                            <img class="card-img-top" src="{{asset('')}}assets/images/whatsapp.png" alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                          <p class="card-text text-center">Order via Whatsapp</p>
+                        </div>
                       </div>
                 </div>
-                <div class="tab">
-
-                      <div class="form-group">
-                        <label for="nama">Pilih Bank</label>
-                        <select data-placeholder="Pilih Provider" data-allow-clear="1" name="id_bank">
-                            <option label="Pilih..." ></option>
-                                @forelse ($data['banks'] as $i)
-                                        <option value="{{$i->id}}">{{$i->nama_bank}}</option>
-                                @empty
-                                        <option label="">Kosong</option>
-                                @endforelse
-                          </select>
-                          @error('id_bank')
-                          <div class="text-danger">{{ $message }}</div>
-                          @enderror
+                <div class="col-sm-6">
+                    <div class="card">
+                        <a href="http://fb.com/fajarmcv">
+                            <img class="card-img-top" src="{{asset('')}}assets/images/facebook-new.png" alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                          <p class="card-text text-center">Order Via Facebook</p>
+                        </div>
                       </div>
-                      <div class="form-group">
-                        <label for="atas_nama">Atas Nama</label>
-                        <input type="text" class="form-control" name="atas_nama" placeholder="John Doe" value="{{old('email')}}" >
-                        @error('atas_nama')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                      </div>
-                      <div class="form-group">
-                        <label for="nomor_rekening">Nomor Rekening</label>
-                        <input type="text" class="form-control" name="nomor_rekening" placeholder="333-XXX-XXX" value="{{old('nomor_rekening')}}">
-                        @error('nomor_rekening')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                      </div>
-                </div>
-
-
-                <div style="text-align:center;margin-top:40px;">
-                  <span class="step"></span>
-                  <span class="step"></span>
-                  <span class="step"></span>
-                </div>
-
-        </form>
-        </div>
-        <div class="modal-footer">
-            <div style="overflow:auto;">
-                <div style="float:right;">
-                  <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-info">Previous</button>
-                  <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-info">Next</button>
                 </div>
               </div>
+
+        </div>
         </div>
       </div>
     </div>
@@ -307,7 +219,7 @@
     <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <p class="services-subtitle">Hitung Rate Telkomsel </p>
+            <p class="services-subtitle">Hitung Rate </p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -315,7 +227,7 @@
         <div class="modal-body">
             <input class="form-control" id="nominal" type="text" placeholder="Masukkan Nominal...">
             <hr>
-                <h4>Yang akan anda terima : </h4> <h4>Rp. <b class="hasil"></b></h4>
+                <h4>Yang akan anda terima : </h4> <h4><b class="hasil"></b></h4>
             <hr>
         </div>
         <div class="modal-footer">
