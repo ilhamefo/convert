@@ -11,7 +11,7 @@
             <p class="mg-b-30 tx-gray-600"></p>
             <div class="col-md-12">
               <div class="form-layout form-layout-4">
-              <form action="{{route('update.company', ['company' => $company[0]->id])}}" method="POST" >
+              <form action="{{route('update.perusahaan', ['perusahaan' => $company[0]->id])}}" method="POST" >
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -35,7 +35,7 @@
                 <!-- row -->
 
                 <div class="form-layout-footer mg-t-30">
-                  <button class="btn btn-info">Tambah</button>
+                  <button class="btn btn-info">Ubah</button>
                 </div><!-- form-layout-footer -->
             </form>
               </div><!-- form-layout -->

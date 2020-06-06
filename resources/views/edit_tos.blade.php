@@ -14,7 +14,7 @@
                 <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Edit Provider</h6>
                 <p class="mg-b-30 tx-gray-600">*Header Berfungsi Memberi Rate Pada Header Card.</p>
 
-              <form action="{{route('update.tos', ['tos' => $data[0]->id])}}" method="POST" >
+              <form action="{{route('update.persyaratan', ['persyaratan' => $data[0]->id])}}" method="POST" >
                 @csrf
                 @method('PUT')
                 <div class="row">

@@ -24,13 +24,13 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function company()
+    public function perusahaan()
     {
         $company = DB::table('company')->select('nama_perusahaan', 'id', 'deskripsi')->get();
 
         return view('company', compact('company'));
     }
-    public function tos()
+    public function persyaratan()
     {
         $terms_of_services = DB::table('terms_of_services')->select('nama_tos', 'id', 'deskripsi')->get();
 
@@ -55,7 +55,7 @@ class HomeController extends Controller
         return view('testimonial', compact('testimonial'));
     }
 
-    public function update_company(Request $request, $id)
+    public function update_perusahaan(Request $request, $id)
     {
         $req = request()->validate([
             'nama_perusahaan' => 'required|max:20',
@@ -105,11 +105,11 @@ class HomeController extends Controller
 
         return redirect()->route('home.providers')->with('success', 'Sukses Update Data Provider');
     }
-    public function update_tos(Request $request, $id)
+    public function update_persyaratan(Request $request, $id)
     {
 
         $req = request()->validate([
-            'nama_tos' => 'required|max:16',
+            'nama_tos' => 'required|max:32',
             'deskripsi' => 'required',
         ]);
 
@@ -119,7 +119,7 @@ class HomeController extends Controller
             ->where('id', $id)
             ->update($req);
 
-        return redirect()->route('home.tos')->with('success', 'Sukses Update Data Provider');
+        return redirect()->route('home.persyaratan')->with('success', 'Sukses Update Data Provider');
     }
 
     public function providers()
@@ -134,7 +134,7 @@ class HomeController extends Controller
 
         return view('edit_provider', compact('data'));
     }
-    public function edit_tos($id)
+    public function edit_persyaratan($id)
     {
         $data = DB::table('terms_of_services')->where('id', $id)->get();
 
@@ -175,7 +175,7 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'Sukses Insert Admin');
     }
 
-    public function store_tos(Request $request)
+    public function store_persyaratan(Request $request)
     {
         // dd('siap');
         $req = request()->validate([
@@ -187,7 +187,7 @@ class HomeController extends Controller
         $req['updated_at'] = \Carbon\Carbon::now();
 
         DB::table('terms_of_services')->insert($req);
-        return redirect()->back()->with('success', 'Sukses Insert Data TOS');
+        return redirect()->back()->with('success', 'Sukses Insert Data Persyaratan');
     }
 
     public function destroy_providers($id)
@@ -219,10 +219,10 @@ class HomeController extends Controller
         DB::table('testimonial')->where('id', '=', $id)->delete();
         return redirect()->back()->with('success', 'Sukses Hapus Data Testimonial');
     }
-    public function destroy_tos($id)
+    public function destroy_persyaratan($id)
     {
         DB::table('terms_of_services')->where('id', '=', $id)->delete();
-        return redirect()->back()->with('success', 'Sukses Hapus Data Provider');
+        return redirect()->back()->with('success', 'Sukses Hapus Data Persyaratan');
     }
     public function destroy_rates($id)
     {

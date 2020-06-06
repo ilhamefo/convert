@@ -53,10 +53,10 @@
       </a>
       <ul class="br-menu-sub nav flex-column">
           @if (Auth::user()->level == '1')
-          <li class="nav-item"><a href="{{route('home.company')}}" class="nav-link {{ Request::is('home/company') ? 'active' : '' }}">Profil Perusahaan</a></li>
+          <li class="nav-item"><a href="{{route('home.perusahaan')}}" class="nav-link {{ Request::is('home/perusahaan') ? 'active' : '' }}">Profil Perusahaan</a></li>
           <li class="nav-item"><a href="{{route('home.providers')}}" class="nav-link {{ Request::is('home/providers*') ? 'active' : '' }}">Provider</a></li>
           <li class="nav-item"><a href="{{route('home.rates')}}" class="nav-link {{ Request::is('home/rates*') ? 'active' : '' }}">Rate Providers</a></li>
-          <li class="nav-item"><a href="{{route('home.tos')}}" class="nav-link {{ Request::is('home/tos*') ? 'active' : '' }}">Syarat Dan Ketentuan</a></li>
+          <li class="nav-item"><a href="{{route('home.persyaratan')}}" class="nav-link {{ Request::is('home/persyaratan*') ? 'active' : '' }}">Syarat Dan Ketentuan</a></li>
           <li class="nav-item"><a href="{{route('home.admin')}}" class="nav-link {{ Request::is('home/admin*') ? 'active' : '' }}">Admin</a></li>
           <li class="nav-item"><a href="{{route('home.password')}}" class="nav-link {{ Request::is('home/password*') ? 'active' : '' }}">Password</a></li>
           <li class="nav-item"><a href="{{route('home.testimonial')}}" class="nav-link {{ Request::is('home/testimonial*') ? 'active' : '' }}">Testimonial</a></li>

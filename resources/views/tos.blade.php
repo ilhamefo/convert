@@ -14,7 +14,7 @@
                     <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Tambah Terms Of Service</h6>
                     <p class="mg-b-30 tx-gray-600"></p>
 
-                    <form action="{{route('store.tos')}}" method="POST">
+                    <form action="{{route('store.persyaratan')}}" method="POST">
                         @csrf
                         <div class="row">
                             <label class="col-sm-2 form-control-label">Nama Tos: <span
@@ -63,9 +63,9 @@
                             <td>{{$i->deskripsi}}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a href="{{route('edit.tos', ['tos' => $i->id])}}"
+                                    <a href="{{route('edit.persyaratan', ['persyaratan' => $i->id])}}"
                                         class="btn btn-primary"><i class="fa fa-cogs"></i></a>
-                                    <form action="{{route('destroy.tos',['tos' => $i->id])}}" method="POST" class="target">
+                                    <form action="{{route('destroy.persyaratan',['persyaratan' => $i->id])}}" method="POST" class="target">
                                   @csrf
                                   @method('DELETE')
                                   <button type=" submit" class="btn btn-danger tmb_hps" data-loop="{{$loop->index+1}}">
